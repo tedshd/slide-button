@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="slide" class="btn_slider" tabindex="1">
+    <div class="btn_slider_track"></div>
+    <div class="btn_slider_thumb" id="sliderThumb"></div>
+  </div>
+</body>
+<script src="script.js"></script>
+<script>
+  slideBtn({
+    dom: document.getElementById('slide'),
+    onSlide: function() {
+      console.log();
+    }
+  });
+</script>
+</html>

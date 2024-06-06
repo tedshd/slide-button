@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.btn_slider {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  background-color: #ddd;
+  border-radius: 25px;
+}
+
+.btn_slider_track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 25px;
+}
+
+.btn_slider_thumb {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  /* transition: all ease-in 0.3s; */
+}
+
+.btn_slider_thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
