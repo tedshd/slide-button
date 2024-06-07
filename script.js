@@ -21,7 +21,8 @@
       if (!isDragging) return;
 
       const rect = slider.getBoundingClientRect();
-      let x = event.clientX - rect.left - sliderThumb.offsetWidth / 2;
+      const clientX = event.clientX ? event.clientX : event.touches[0].clientX;
+      let x = clientX - rect.left - sliderThumb.offsetWidth / 2;
 
       if (x < 0) {
         x = 0;
