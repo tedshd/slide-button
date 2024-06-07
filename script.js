@@ -40,11 +40,11 @@
       sliderThumb.style.left = 0;
     }
 
-    sliderThumb.addEventListener('mousedown', (event) => slideStart);
+    sliderThumb.addEventListener('mousedown', slideStart);
 
-    document.addEventListener('mousemove', (event) => slideMove);
+    document.addEventListener('mousemove', slideMove);
 
-    document.addEventListener('mouseup', () => slideEnd);
+    document.addEventListener('mouseup', slideEnd);
 
     sliderThumb.addEventListener('touchstart', slideStart);
     document.addEventListener('touchmove', slideMove);
