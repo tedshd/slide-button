@@ -12,12 +12,12 @@
 
     let isDragging = false;
 
-    sliderThumb.addEventListener('mousedown', (event) => {
-      isDragging = true;
-      slider
-    });
 
-    document.addEventListener('mousemove', (event) => {
+    const slideStart = (event) => {
+      isDragging = true;
+    }
+
+    const slideMove = (event) => {
       if (!isDragging) return;
 
       const rect = slider.getBoundingClientRect();
@@ -30,17 +30,25 @@
       }
 
       sliderThumb.style.left = `${x}px`;
-    });
+    }
 
-    document.addEventListener('mouseup', () => {
-      console.log('mouseup', sliderWidth - sliderThumb.offsetLeft);
+    const slideEnd = (event) => {
       isDragging = false;
       if (sliderWidth - sliderThumb.offsetLeft <= sliderThumb.offsetWidth) {
         arg.onSlide();
-      } else {
-        sliderThumb.style.left = 0;
       }
-    });
+      sliderThumb.style.left = 0;
+    }
+
+    sliderThumb.addEventListener('mousedown', (event) => slideStart);
+
+    document.addEventListener('mousemove', (event) => slideMove);
+
+    document.addEventListener('mouseup', () => slideEnd);
+
+    sliderThumb.addEventListener('touchstart', slideStart);
+    document.addEventListener('touchmove', slideMove);
+    document.addEventListener('touchend', slideEnd);
   }
 
   window.slideBtn = slideBtn;
